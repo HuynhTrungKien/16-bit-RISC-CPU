@@ -114,7 +114,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | 4     | DI      |1011    | Disable interrupt     |
 
 ## Example:
-
+|---------------------------------------------------|
 | imem[0] = 8'b1110_0000;                           |
 | imem[1] = 8'b0000_0010; // EI                     | 
 |---------------------------------------------------|
