@@ -39,6 +39,79 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | 7     | SGT     | 0000   | 111    | rd ← (a > b) ? 1 : 0  |
 | 8     | SETE    | 0000   | 010    | rd ← (a == b) ? 1 : 0 |
 
+### I-type:
+| Opcode | Rs1  | Rd  | Imm   |
+|--------|------|------|------|
+| 15:12  | 11:9 | 8:6  | 5:0  |
+
+| Order | Command  | Opcode | Description          |
+|-------|----------|--------|----------------------|
+| 1     | ADDI     | 0001   | rd ← rs1 + imm       |
+| 2     | SUBI     | 0010   | rd ← rs1 – imm       |
+| 3     | ANDI     | 0101   | rd ← rs1 & imm       |
+| 4     | ORI      | 0110   | rd ← rs1 | imm       |
+| 5     | XORI     | 0100   | rd ← rs1 ^ imm       |
+| 6     | LSTI     | 0011   | rd ← rs1 << imm      |
+| 7     | LSLI     | 1111   | rd ← rs1 >> imm      |
+
+### L-type:
+#### LD:
+| Opcode | Rs1  | Rd  | Imm   |
+|--------|------|------|------|
+| 15:12  | 11:9 | 8:6  | 5:0  |
+
+| Order | Command | Opcode | Description           |
+|-------|---------|--------|-----------------------|
+| 1     | LD      | 0111   | rd ← Mem[rs1 + imm]   |
+#### LI:
+| Opcode | Rd  | Imm   |
+|--------|-----|-------|
+| 15:12  | 11:9 | 8:0  |
+
+| Order | Command | Opcode | Description           |
+|-------|---------|--------|-----------------------|
+| 1     | LI      |1000    | rd ← imm              |
+
+### S-type:
+| Opcode | Rs1  | Rs2  | Imm   |
+|--------|------|------|------|
+| 15:12  | 11:9 | 8:6  | 5:0  |
+
+| Order | Command | Opcode | Description           |
+|-------|---------|--------|-----------------------|
+| 1     | ST      | 1001   | Mem[rs1 + imm] ← rs2  |
+
+### B-type:
+| Opcode | Rs1  | Imm   |
+|--------|-----|--------|
+| 15:12  | 11:9 | 8:0   |
+
+| Order | Command | Opcode | Description           |
+|-------|---------|--------|-----------------------|
+| 1     | BEQZ    |1010    | if(rs1 == 0) PC += imm|
+| 2     | BNQZ    |1011    | if(rs1 ≠ 0) PC += imm |
+
+### J-type:
+| Opcode | Imm   |
+|--------|-------|
+| 15:12  | 11:0  |
+
+| Order | Command | Opcode | Description                |
+|-------|---------|--------|----------------------------|
+| 1     | JMP     |1100    | PC ← PC + imm              |
+| 2     | CALL    |1101    | PC -> Mem[sp] PC = PC + imm|
+
+### SYS-type:
+| Opcode | Imm  | Fucnt3 |
+|--------|------|--------|
+| 15:12  | 11:3 |  2:0   |
+
+| Order | Command | Opcode | Description           |
+|-------|---------|--------|-----------------------|
+| 1     | NOP     |1010    | Do nothing            |
+| 2     | RET     |1011    | Eeturn from interrupt |
+| 3     | EI      |1010    | Enable interrupt      |
+| 4     | DI      |1011    | Disable interrupt     |
 References:
 
 https://www.fpga4student.com/2017/04/verilog-code-for-16-bit-risc-processor.html
