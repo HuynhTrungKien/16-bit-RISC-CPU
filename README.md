@@ -181,6 +181,7 @@ imem[127] = 8'b0000_0001; // RET
 
 
 ## Demo:
+
 ![RTL schematic](https://github.com/HuynhTrungKien/16-bit-RISC-CPU/blob/master/Images/RTL%20schematic.jpg)
 
 ## Demo video:
