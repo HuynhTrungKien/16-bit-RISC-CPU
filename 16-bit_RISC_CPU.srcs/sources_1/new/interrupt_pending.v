@@ -26,11 +26,9 @@ module interrupt_pending(
     input        ei_set,
     input        di_clear,
     input        interrupt_pending,
-    output reg   int_enable,
     output       icr_sel
 );
-//reg int_enable;
-    // Flip-flop behavior for EI/DI
+reg int_enable;
     always @(posedge clk or posedge reset) begin
         if (reset)
             int_enable <= 1'b0;
@@ -39,8 +37,6 @@ module interrupt_pending(
         else if (di_clear)
             int_enable <= 1'b0;
     end
-
-    // ICR_sel = int_enable AND interrupt_pending
     assign icr_sel = int_enable && interrupt_pending;
 endmodule
 

@@ -25,35 +25,14 @@ module CPU_tb();
   reg clk;
   reg [1:0] mux_clk;
   reg interrupt_pending;
-  wire [15:0] ret_addr; 
-  wire over_flow, under_flow;
-  wire int_enable;
-  wire icr_sel;
-  wire [15:0] instruction;
-  wire [15:0]pc_out;
-  wire [15:0] r3,sp,r2; 
-  wire [15:0] r4;
-  wire [15:0] r5;
-  wire [15:0] r6;
+  wire [15:0] r3;
 
   TOP uut (
-    .clk_out(clk),
+    .clk(clk),
     .reset(reset),
-    .icr_sel(icr_sel),
-    .int_enable(int_enable),
     .mux_clk(mux_clk),
     .interrupt_pending(interrupt_pending),
-    .over_flow(over_flow),
-    .under_flow(under_flow),
-    .sp(sp),
-    .ret_addr(ret_addr),
-    .instruction(instruction),
-    .r3(r3),
-    .r4(r4),
-    .r5(r5),
-    .r6(r6),
-    .r2(r2),
-    .address(pc_out)
+    .r3(r3)
   );
 initial begin
     clk = 0;
@@ -62,17 +41,13 @@ end
 initial begin
 reset = 1;
 interrupt_pending = 0;
-mux_clk = 3'b10;
+mux_clk = 2'b10;
 #3;
 reset = 0;
-//#240;
-//interrupt_pending = 1;
-//#15;
-//interrupt_pending = 0;
-//#1107;
-//interrupt_pending = 1;
-//#13;
-//interrupt_pending = 0;
+#69967;
+interrupt_pending = 1;
+#15;
+interrupt_pending = 0;
 end
 endmodule
 

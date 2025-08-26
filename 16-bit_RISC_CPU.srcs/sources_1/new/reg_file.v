@@ -22,12 +22,12 @@
 
 // REGISTER FILE
 
-module reg_file(rs1,rs2,rd,data,reg_wrt,readA_out,readB_out,r3,r0,r1,r2,r4,r5,r6,r7,clk);
+module reg_file(rs1,rs2,rd,data,reg_wrt,readA_out,readB_out,r3,clk);
 input reg_wrt,clk;
 input [2:0]rs1,rs2,rd;
 input [15:0]data;
 output [15:0]readA_out,readB_out;
-output [15:0] r0,r1,r2,r3,r4,r5,r6,r7;
+output [15:0] r3;
 
 reg [15:0] x [0:7];
 integer i;
@@ -49,12 +49,5 @@ if(reg_wrt==1)
 end
 assign readA_out = x[rs1];
 assign readB_out = x[rs2];
-assign r0 = x[0];
-assign r1 = x[1];
-assign r2 = x[2];
 assign r3 = x[3];
-assign r4 = x[4];
-assign r5 = x[5];
-assign r6 = x[6];
-assign r7 = x[7];
 endmodule
