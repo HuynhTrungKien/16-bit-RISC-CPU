@@ -109,7 +109,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | Order | Command | Opcode | Description           |
 |-------|---------|--------|-----------------------|
 | 1     | NOP     |1010    | Do nothing            |
-| 2     | RET     |1011    | Eeturn from interrupt |
+| 2     | RET     |1011    | Return from interrupt |
 | 3     | EI      |1010    | Enable interrupt      |
 | 4     | DI      |1011    | Disable interrupt     |
 
