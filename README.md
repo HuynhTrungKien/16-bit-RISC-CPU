@@ -5,7 +5,6 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 ## Schematic:
 ![CPU](https://github.com/HuynhTrungKien/16-bit-RISC-CPU/blob/master/Images/CPU.png)
 
-![RTL schematic](https://github.com/HuynhTrungKien/16-bit-RISC-CPU/blob/master/Images/RTL%20schematic.jpg)
 ## Operational Procedure:
 
 1) IF (Instruction Fetch):  
@@ -179,7 +178,7 @@ imem[125] = 8'b1100_0000; // ADDI r3 <- r1 + 0
 ---------------------------------------------------
 imem[126] = 8'b1110_0000;
 imem[127] = 8'b0000_0001; // RET
-
+---------------------------------------------------
 
 ## Demo:
 ![RTL schematic](https://github.com/HuynhTrungKien/16-bit-RISC-CPU/blob/master/Images/RTL%20schematic.jpg)
