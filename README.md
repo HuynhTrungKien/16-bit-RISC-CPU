@@ -116,7 +116,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 ## Demo:
 ![RTL schematic](https://github.com/HuynhTrungKien/16-bit-RISC-CPU/blob/master/Images/RTL%20schematic.jpg)
 
-### Demo video:
+## Demo video:
 https://www.youtube.com/watch?v=dWAolgAUa08
 
 ## References:
