@@ -114,7 +114,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | 4     | DI      |1011    | Disable interrupt     |
 
 ## Demo:
-
+![RTL schematic](D:\Vivado_project\16-bit_RISC_CPU)
 
 ## References:
 
