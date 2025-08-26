@@ -33,7 +33,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | 1     | ADD     | 0000   | 000    | rd ← rs1 + rs2        |
 | 2     | SUB     | 0000   | 001    | rd ← rs1 – rs2        |
 | 3     | AND     | 0000   | 011    | rd ← rs1 & rs2        |
-| 4     | OR      | 0000   | 100    | rd ← rs1 \| rs2        |
+| 4     | OR      | 0000   | 100    | rd ← rs1 \| rs2       |
 | 5     | XOR     | 0000   | 101    | rd ← rs1 ^ rs2        |
 | 6     | SLT     | 0000   | 110    | rd ← (a < b) ? 1 : 0  |
 | 7     | SGT     | 0000   | 111    | rd ← (a > b) ? 1 : 0  |
@@ -49,7 +49,7 @@ This project presents the design and implementation of a 16-bit Reduced Instruct
 | 1     | ADDI     | 0001   | rd ← rs1 + imm       |
 | 2     | SUBI     | 0010   | rd ← rs1 – imm       |
 | 3     | ANDI     | 0101   | rd ← rs1 & imm       |
-| 4     | ORI      | 0110   | rd ← rs1 \| imm       |
+| 4     | ORI      | 0110   | rd ← rs1 \| imm      |
 | 5     | XORI     | 0100   | rd ← rs1 ^ imm       |
 | 6     | LSTI     | 0011   | rd ← rs1 << imm      |
 | 7     | LSLI     | 1111   | rd ← rs1 >> imm      |
